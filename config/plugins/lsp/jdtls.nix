@@ -3,7 +3,7 @@
 {
   plugins.jdtls = {
     enable = true;
-    extraOptions = {
+    settings = {
       on_attach.__raw = ''
         function(client, bufnr)
           require("jdtls.setup").add_commands()
