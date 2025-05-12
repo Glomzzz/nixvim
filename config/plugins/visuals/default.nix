@@ -6,5 +6,7 @@
     ./lualine.nix
     ./notify.nix
     ./mini-icons.nix
+    ./web-devicons.nix
+    
   ];
 }
