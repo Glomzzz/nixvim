@@ -62,7 +62,7 @@
     {
       mode = [ "n" ];
       key = "<c-down>";
-      action = "<cmd>resize +2<cr>";
+      action = "<cmd>resize -2<cr>";
     }
     {
       mode = [ "n" ];
