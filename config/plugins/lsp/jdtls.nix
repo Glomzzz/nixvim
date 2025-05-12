@@ -1,10 +1,8 @@
 { pkgs, ... }:
 
 {
-  plugins.nvim-jdtls = {
+  plugins.jdtls = {
     enable = true;
-    data = ".jdtls/workspace";
-    configuration = ".jdtls/config";
     extraOptions = {
       on_attach.__raw = ''
         function(client, bufnr)
