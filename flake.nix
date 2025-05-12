@@ -25,7 +25,7 @@
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
           pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; };
-          pkgs-unfree = import inputs.nixpkgs { inherit system; config.allowUnfree = true; };
+          pkgs-unfree = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
           pkg-wgsl-analyzer = inputs.wgsl-analyzer.packages.${system}.default;
           nixvimModule = {
             inherit pkgs;
