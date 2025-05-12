@@ -7,6 +7,6 @@
     ./notify.nix
     ./mini-icons.nix
     ./web-devicons.nix
-    
+    ./dropbar.nix
   ];
 }
