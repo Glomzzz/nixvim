@@ -41,6 +41,7 @@ require("oil").setup({
     ["<C-p>"] = { "actions.preview", opts = { split = "botright" } },
     ["<C-l>"] = "actions.refresh",
     ["`"] = { "actions.open_cwd", mode = "n" },
+    ["g."] = "actions.toggle_hidden",
     ["gs"] = { "actions.change_sort", mode = "n" },
     ["gx"] = "actions.open_external",
     ["g\\"] = { "actions.toggle_trash", mode = "n" },

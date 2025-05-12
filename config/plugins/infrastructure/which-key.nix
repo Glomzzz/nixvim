@@ -1,5 +1,5 @@
-{
-  plugins.which-key = {
-    enable = true;
-  };
+{helpers,pkgs-unstable, ...}: {
+  extraPlugins = with pkgs-unstable.vimPlugins; [
+    which-key-nvim
+  ];
 }
