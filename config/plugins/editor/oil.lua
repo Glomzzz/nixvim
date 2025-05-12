@@ -79,9 +79,8 @@ require("oil").setup({
     disable_preview = function(filename)
       return false
     end,
-    -- Window-local options to use for preview window buffers
+  },
     win_options = {
       winbar = '%!v:lua.get_oil_winbar()',
     },
-  },
 })
