@@ -8,7 +8,7 @@
       action = "v:count == 0 ? 'gj' : 'j'";
       options = {
         expr = true;
-        remap = true;
+        remap = false;
       };
     }
     {
@@ -17,7 +17,7 @@
       action = "v:count == 0 ? 'gk' : 'k'";
       options = {
         expr = true;
-        remap = true;
+        remap = false;
       };
     }
     # Window movement.
