@@ -1,7 +1,7 @@
 {helpers,pkgs-unstable, ...}: {
-  extraPlugins = with pkgs-unstable.vimPlugins; {
+  extraPlugins = with pkgs-unstable.vimPlugins; [
     oil-nvim
-  };
+  ];
   keymaps = [
     {
       mode = ["n"];

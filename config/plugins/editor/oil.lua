@@ -8,8 +8,8 @@ function _G.get_oil_winbar()
 end
 
 
-require("blink-cmp").setup({
-      -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
+require("oil").setup({
+  -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
   -- Set to false if you want some other plugin (e.g. netrw) to open when you edit directories.
   default_file_explorer = true,
   delete_to_trash = false,
@@ -47,7 +47,7 @@ require("blink-cmp").setup({
     ["<leader>e"] = { "actions.close", mode = "n" },
   },
   -- Set to false to disable all of the above keymaps
-  use_default_keymaps = false
+  use_default_keymaps = false,
   view_options = {
     -- Show files and directories that start with "."
     show_hidden = true,
