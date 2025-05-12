@@ -51,9 +51,7 @@
         enable = true;
         settings.formatting.command = ["${lib.getExe pkgs.alejandra}"];
       };
-      lsp_format = {
-        enable = true;
-      };
+
       ts_ls = {
         enable = true;
       };

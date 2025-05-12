@@ -1,7 +1,7 @@
 {
   imports = [
     ./copilot.nix
-    ./neo-tree.nix
+    ./oil.nix
     ./lazygit-nvim.nix
     ./markdown-preview.nix
     ./toggleterm.nix
