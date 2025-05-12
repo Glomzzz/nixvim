@@ -4,7 +4,6 @@
     ./dressing.nix
     ./bufferline.nix
     ./lualine.nix
-    ./virt-column-nvim.nix
     ./notify.nix
     ./mini-icons.nix
   ];
