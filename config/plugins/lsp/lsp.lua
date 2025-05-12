@@ -17,14 +17,14 @@ vim.lsp.handlers["wgsl-analyzer/requestConfiguration"] = function(err, result, c
       customImports = { _dummy_ = "dummy"},
       shaderDefs = {},
       trace = {
-          extension = false,
-          server = false,
+          extension = true,
+          server = true,
       },
       inlayHints = {
-          enabled = false,
-          typeHints = false,
-          parameterHints = false,
-          structLayoutHints = false,
+          enabled = true,
+          typeHints = true,
+          parameterHints = true,
+          structLayoutHints = true,
           typeVerbosity = "inner",
       },
       diagnostics = {

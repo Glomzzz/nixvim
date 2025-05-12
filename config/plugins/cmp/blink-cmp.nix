@@ -1,37 +1,53 @@
 { helpers, ... }:
 {
+  extraPlugins = with pkgs-unstable.vimPlugins; [
+    colorful-menu-nvim
+  ];
   plugins.blink-cmp = {
       enable = true;
       settings = {
-        appearance = {
-          nerd_font_variant = "normal";
-          use_nvim_cmp_as_default = true;
-        };
         completion = {
           accept = {
             auto_brackets = {
               enabled = true;
               semantic_token_resolution = {
-                enabled = false;
+                enabled = true;
               };
             };
           };
-          documentation = {
+          menu = {
             auto_show = true;
+            draw = helpers.mkRaw ''
+              {
+              columns = { { 'kind_icon' }, { 'label', gap = 1 } },
+              components = {
+                label = {
+                  text = function(ctx)
+                    return require('colorful-menu').blink_components_text(ctx)
+                  end,
+                  highlight = function(ctx)
+                    return require('colorful-menu').blink_components_highlight(ctx)
+                  end,
+                },
+              }
+            '';
           };
-        };
-        keymap = {
-          preset = "super-tab";
         };
         signature = {
           enabled = true;
         };
+        cmdline = {
+          completion = {
+            menu = {
+              auto_show = true;
+            };
+          };
+        };
         sources = {
           cmdline = [ ];
           providers = {
-            buffer = {
-              score_offset = -7;
-            };
+            snippets.score_offset = 1000;
+            buffer.score_offset = -7;
             lsp = {
               fallbacks = [ ];
             };
