@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, pkg-wgsl-analyzer, ... }:
+{ pkgs,lib, pkgs-unstable, pkg-wgsl-analyzer, ... }:
 
 {
   extraPlugins = with pkgs.vimPlugins;[
@@ -14,6 +14,7 @@
       require("neoconf").setup({})
       require("neodev").setup({})
     '';
+
     servers = {
       cmake = {
         enable = true;
@@ -47,6 +48,10 @@
         enable = true;
       };
       nil_ls = {
+        enable = true;
+        settings.formatting.command = ["${lib.getExe pkgs.alejandra}"];
+      };
+      lsp_format = {
         enable = true;
       };
       ts_ls = {
