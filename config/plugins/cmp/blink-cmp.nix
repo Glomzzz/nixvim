@@ -1,12 +1,9 @@
-{ pkgs-unstable,helpers, ... }:
+{ pkgs, pkgs-unstable,helpers, ... }:
 {
   extraPlugins = with pkgs-unstable.vimPlugins; [
+    blink-cmp
     colorful-menu-nvim
   ];
-  plugins.blink-cmp = {
-      enable = true;
-      
-  };
 
   extraConfigLua = builtins.readFile (./blink-cmp.lua);
 }

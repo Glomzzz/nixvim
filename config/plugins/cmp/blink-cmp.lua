@@ -1,5 +1,8 @@
 require("blink-cmp").setup({
     completion = {
+        ghost_text = {
+            enabled = true,
+        },
         documentation = {
           auto_show = true,
         },
@@ -22,6 +25,7 @@ require("blink-cmp").setup({
       keymap = {
         ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
         ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
+        ['<Tab>'] = { 'show', 'accept' },
       },
       signature = {
         enabled = true,
@@ -31,11 +35,11 @@ require("blink-cmp").setup({
           menu = {
             auto_show = true,
           },
+          ghost_text = {
+            enabled = true,
+          },
         },
       },
       sources = {
-        providers = {
-          snippets = { score_offset = 1000 },
-        },
       },
 })
