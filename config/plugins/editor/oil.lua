@@ -34,7 +34,7 @@ require("oil").setup({
   keymaps = {
     ["g?"] = { "actions.show_help", mode = "n" },
     ["<CR>"] = "actions.select",
-    ["<BS"] = { "actions.parent", mode = "n" },
+    ["<BS>"] = { "actions.parent", mode = "n" },
     ["<C-s>"] = { "actions.select", opts = { vertical = true, split = "botright"} },
     ["<C-h>"] = { "actions.select", opts = { horizontal = true, split = "botright" } },
     ["<C-t>"] = { "actions.select", opts = { tab = true } },
