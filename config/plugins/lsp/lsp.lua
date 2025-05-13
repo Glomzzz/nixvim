@@ -11,6 +11,8 @@ lspconfig.wgsl_analyzer.setup({
   cmd = { "${pkg-wgsl-analyzer}/bin/wgsl_analyzer" }
 })
 
+vim.lsp.inlay_hint.enable()
+
 vim.lsp.handlers["wgsl-analyzer/requestConfiguration"] = function(err, result, ctx, config)
   return { 
       success = true,
@@ -58,5 +60,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<space>f", function()
       vim.lsp.buf.format({ async = true })
     end, { buffer = ev.buf, desc = "Format" })
+    vim.keymap.set("n", "<space>ih", function ()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    end, { desc = "Toggle Inlay Hint" })
   end,
 })
