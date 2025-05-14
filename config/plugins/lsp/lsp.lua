@@ -11,6 +11,7 @@ lspconfig.wgsl_analyzer.setup({
   cmd = { "${pkg-wgsl-analyzer}/bin/wgsl_analyzer" }
 })
 
+
 vim.lsp.inlay_hint.enable()
 
 vim.lsp.handlers["wgsl-analyzer/requestConfiguration"] = function(err, result, ctx, config)
