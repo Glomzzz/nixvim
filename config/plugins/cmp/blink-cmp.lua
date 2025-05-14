@@ -25,6 +25,7 @@ require("blink-cmp").setup({
       keymap = {
         ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
         ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
+        ['<CR>'] = { 'show', 'accept' },
         ['<Tab>'] = { 'show', 'accept' },
       },
       signature = {
