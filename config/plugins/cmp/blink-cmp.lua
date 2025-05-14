@@ -1,5 +1,8 @@
 require("blink-cmp").setup({
-    completion = {
+  snippets = {
+    preset = "luasnip",
+  },
+  completion = {
         ghost_text = {
             enabled = true,
         },
@@ -26,6 +29,7 @@ require("blink-cmp").setup({
         ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
         ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
         ['<Tab>'] = { 'show', 'accept' },
+        ['<CR>'] = { 'accept', 'fallback' }
       },
       signature = {
         enabled = true,
@@ -43,3 +47,5 @@ require("blink-cmp").setup({
       sources = {
       },
 })
+
+
