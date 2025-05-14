@@ -8,15 +8,15 @@ require("tiny-inline-diagnostic").setup({
   -- "ghost", "simple", "nonerdfont", "amongus"
   preset = "modern",
 
-  transparent_bg = false,           -- Set the background of the diagnostic to transparent
-  transparent_cursorline = false,   -- Set the background of the cursorline to transparent (only one the first diagnostic)
+  transparent_bg = false,         -- Set the background of the diagnostic to transparent
+  transparent_cursorline = false, -- Set the background of the cursorline to transparent (only one the first diagnostic)
 
   hi = {
-    error = "DiagnosticError",     -- Highlight group for error messages
-    warn = "DiagnosticWarn",       -- Highlight group for warning messages
-    info = "DiagnosticInfo",       -- Highlight group for informational messages
-    hint = "DiagnosticHint",       -- Highlight group for hint or suggestion messages
-    arrow = "NonText",             -- Highlight group for diagnostic arrows
+    error = "DiagnosticError", -- Highlight group for error messages
+    warn = "DiagnosticWarn",   -- Highlight group for warning messages
+    info = "DiagnosticInfo",   -- Highlight group for informational messages
+    hint = "DiagnosticHint",   -- Highlight group for hint or suggestion messages
+    arrow = "NonText",         -- Highlight group for diagnostic arrows
 
     -- Background color for diagnostics
     -- Can be a highlight group or a hexadecimal color (#RRGGBB)
@@ -134,5 +134,24 @@ require("tiny-inline-diagnostic").setup({
     -- You should not change this unless the plugin does not work with your configuration
     overwrite_events = nil,
   },
-  disabled_ft = {}   -- List of filetypes to disable the plugin
+  disabled_ft = {}, -- List of filetypes to disable the plugin
 })
+
+vim.keymap.set("n", "[e", function()
+  vim.diagnostic.jump({
+  count = -1,
+    severity = vim.diagnostic.severity.ERROR,
+    wrap = true,
+  })
+end, { desc = "Jump to next error" })
+
+vim.keymap.set("n", "]e", function()
+  vim.diagnostic.jump({
+    count = 1,
+    severity = vim.diagnostic.severity.ERROR,
+    wrap = true,
+  })
+end, {  desc = "Jump to previous error" })
+
+
+
