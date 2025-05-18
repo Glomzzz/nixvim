@@ -23,7 +23,9 @@ Install [Nix: The Package Manager](https://nixos.org/download/).
 experimental-features = nix-command flakes
 ```
 
-## Try my NixVim
+## Try Glom's NixVim
+
+> You should have cargo and rustc in your env if you want to use rust-analyzer in my NixVim
 
 Clone this repo and run the following command:
 ```
