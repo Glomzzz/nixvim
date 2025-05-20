@@ -1,7 +1,12 @@
-{ pkgs,lib, pkgs-unstable, pkg-wgsl-analyzer, ... }:
-
 {
-  extraPlugins = with pkgs.vimPlugins;[
+  pkgs,
+  lib,
+  pkgs-unstable,
+  pkg-wgsl-analyzer,
+  helpers,
+  ...
+}: {
+  extraPlugins = with pkgs.vimPlugins; [
     pkg-wgsl-analyzer
     neoconf-nvim
     neodev-nvim
@@ -61,10 +66,11 @@
         enable = true;
         settings = {
           formatterMode = "typstyle";
-          rootPath = "./";
+          rootPath = helpers.mkRaw ''
+            vim.fn.getcwd()
+          '';
         };
       };
-
     };
   };
 
