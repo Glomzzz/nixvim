@@ -7,7 +7,6 @@ function _G.get_oil_winbar()
   end
 end
 
-
 require("oil").setup({
   -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
   -- Set to false if you want some other plugin (e.g. netrw) to open when you edit directories.
@@ -31,11 +30,17 @@ require("oil").setup({
   },
   constrain_cursor = "editable",
   watch_for_changes = true,
+  columns = {
+    "icon",
+    "permissions",
+    "size",
+    "mtime",
+  },
   keymaps = {
     ["g?"] = { "actions.show_help", mode = "n" },
     ["<CR>"] = "actions.select",
     ["<BS>"] = { "actions.parent", mode = "n" },
-    ["<C-s>"] = { "actions.select", opts = { vertical = true, split = "botright"} },
+    ["<C-s>"] = { "actions.select", opts = { vertical = true, split = "botright" } },
     ["<C-h>"] = { "actions.select", opts = { horizontal = true, split = "botright" } },
     ["<C-t>"] = { "actions.select", opts = { tab = true } },
     ["<C-p>"] = { "actions.preview", opts = { split = "botright" } },
@@ -80,7 +85,7 @@ require("oil").setup({
       return false
     end,
   },
-    win_options = {
-      winbar = '%!v:lua.get_oil_winbar()',
-    },
+  win_options = {
+    winbar = '%!v:lua.get_oil_winbar()',
+  },
 })
