@@ -57,6 +57,9 @@
       jsonls = {
         enable = true;
       };
+      tinymist = {
+        enable = true;
+      };
 
     };
   };
