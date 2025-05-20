@@ -31,10 +31,9 @@ require("oil").setup({
   constrain_cursor = "editable",
   watch_for_changes = true,
   columns = {
-    "icon",
-    "permissions",
-    "size",
     "mtime",
+    "size",
+    "icon",
   },
   keymaps = {
     ["g?"] = { "actions.show_help", mode = "n" },
