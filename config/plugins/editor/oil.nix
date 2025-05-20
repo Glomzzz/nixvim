@@ -1,6 +1,7 @@
 {helpers,pkgs-unstable, ...}: {
   extraPlugins = with pkgs-unstable.vimPlugins; [
     oil-nvim
+    oil-git-status-nvim
   ];
   keymaps = [
     {

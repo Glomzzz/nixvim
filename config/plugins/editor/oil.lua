@@ -31,8 +31,6 @@ require("oil").setup({
   constrain_cursor = "editable",
   watch_for_changes = true,
   columns = {
-    "mtime",
-    "size",
     "icon",
   },
   keymaps = {
@@ -86,5 +84,36 @@ require("oil").setup({
   },
   win_options = {
     winbar = '%!v:lua.get_oil_winbar()',
+    signcolumn = "yes:2",
+  },
+})
+
+require('oil-git-status').setup({
+  show_ignored = true, -- show files that match gitignore with !!
+  symbols = { -- customize the symbols that appear in the git status columns
+    index = {
+      ["A"] = "",
+      ["C"] = "󰆏",
+      ["D"] = "",
+      ["M"] = "",
+      ["R"] = "",
+      ["T"] = "󰉺",
+      ["!"] = "",
+      ["?"] = "",
+      ["U"] = "",
+      [" "] = " ",
+    },
+    working_tree = {
+      ["A"] = "",
+      ["C"] = "󰆏",
+      ["D"] = "",
+      ["M"] = "",
+      ["R"] = "",
+      ["T"] = "󰉺",
+      ["!"] = "",
+      ["?"] = "",
+      ["U"] = "",
+      [" "] = " ",
+    },
   },
 })
