@@ -59,6 +59,10 @@
       };
       tinymist = {
         enable = true;
+        settings = {
+          formatterMode = "typstyle";
+          rootPath = "./";
+        };
       };
 
     };
