@@ -43,7 +43,7 @@
       action = helpers.mkRaw ''
         function()
           require("telescope").extensions.live_grep_args.live_grep_args{
-             additional_args = function(args) return vim.list_extend(args, { "--hidden" }) end,
+                additional_args = function(args) return vim.list_extend(args, { "--hidden" }) end,
           }
         end
       '';
@@ -51,9 +51,9 @@
         desc = "Live Grep";
       };
     }
-    {
+     {
       mode = ["n"];
-      key = "<leader><space>";
+      key = "<leader>?";
       action = helpers.mkRaw ''
         function()
           require("telescope.builtin").find_files({hidden = true,})
@@ -61,6 +61,17 @@
       '';
       options = {
         desc = "Find Files";
+      };
+    }   {
+      mode = ["n"];
+      key = "<leader><space>";
+      action = helpers.mkRaw ''
+        function()
+          require("telescope.builtin").resume()
+        end
+      '';
+      options = {
+        desc = "Resume previous finding";
       };
     }
   ];
