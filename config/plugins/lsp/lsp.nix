@@ -62,10 +62,13 @@
       jsonls = {
         enable = true;
       };
+      html.enable = true;
+      cssls.enable = true;
       tinymist = {
         enable = true;
         settings = {
           formatterMode = "typstyle";
+          semanticTokens = "disable";
           rootPath = helpers.mkRaw ''
             vim.fn.getcwd()
           '';
