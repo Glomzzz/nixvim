@@ -1,4 +1,4 @@
-{ helpers, ... }:
+{ lib, ... }:
 
 {
   plugins.flash = {
@@ -9,7 +9,7 @@
     {
       mode = [ "n" "x" "o" ];
       key = "s";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("flash").jump()
         end
@@ -21,7 +21,7 @@
     {
       mode = [ "n" "x" "o" ];
       key = "S";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("flash").treesitter()
         end
@@ -33,7 +33,7 @@
     {
       mode = [ "o" ];
       key = "r";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("flash").remote()
         end
@@ -45,7 +45,7 @@
     {
       mode = [ "x" "o" ];
       key = "R";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("flash").treesitter_search()
         end
@@ -57,7 +57,7 @@
     {
       mode = [ "c" ];
       key = "<c-s>";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("flash").toggle()
         end

@@ -1,4 +1,4 @@
-{helpers,pkgs-unstable, ...}: {
+{lib,pkgs-unstable, ...}: {
   extraPlugins = with pkgs-unstable.vimPlugins; [
     oil-nvim
     oil-git-status-nvim
@@ -7,7 +7,7 @@
     {
       mode = ["n"];
       key = "<leader>e";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
          function()
           require('oil').open()
         end

@@ -1,4 +1,4 @@
-{helpers, ...}: {
+{lib, ...}: {
   plugins.telescope = {
     enable = true;
     extensions = {
@@ -40,7 +40,7 @@
     {
       mode = ["n"];
       key = "<leader>/";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("telescope").extensions.live_grep_args.live_grep_args{
                 additional_args = function(args) return vim.list_extend(args, { "--hidden" }) end,
@@ -54,7 +54,7 @@
      {
       mode = ["n"];
       key = "<leader>?";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("telescope.builtin").find_files({hidden = true,})
         end
@@ -65,7 +65,7 @@
     }   {
       mode = ["n"];
       key = "<leader><space>";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("telescope.builtin").resume()
         end

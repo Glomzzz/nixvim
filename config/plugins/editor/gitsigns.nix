@@ -1,4 +1,4 @@
-{ helpers, ... }:
+{ lib, ... }:
 
 {
   plugins.gitsigns = {
@@ -9,7 +9,7 @@
     {
       mode = [ "n" ];
       key = "<leader>hs";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         require("gitsigns").stage_hunk
       '';
       options = {
@@ -19,7 +19,7 @@
     {
       mode = [ "n" ];
       key = "<leader>hr";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         require("gitsigns").reset_hunk
       '';
       options = {
@@ -29,7 +29,7 @@
     {
       mode = [ "v" ];
       key = "<leader>hs";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end
@@ -41,7 +41,7 @@
     {
       mode = [ "v" ];
       key = "<leader>hr";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end
@@ -53,7 +53,7 @@
     {
       mode = [ "n" ];
       key = "<leader>bs";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         require("gitsigns").stage_buffer
       '';
       options = {
@@ -63,7 +63,7 @@
     {
       mode = [ "n" ];
       key = "<leader>hu";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         require("gitsigns").undo_stage_hunk
       '';
       options = {
@@ -73,7 +73,7 @@
     {
       mode = [ "n" ];
       key = "<leader>br";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         require("gitsigns").reset_buffer
       '';
       options = {
@@ -83,7 +83,7 @@
     {
       mode = [ "n" ];
       key = "<leader>hp";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         require("gitsigns").preview_hunk
       '';
       options = {
@@ -93,7 +93,7 @@
     {
       mode = [ "n" ];
       key = "<leader>hb";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("gitsigns").blame_line({ full = true })
         end
@@ -105,7 +105,7 @@
     {
       mode = [ "n" ];
       key = "<leader>tb";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         require("gitsigns").toggle_current_line_blame
       '';
       options = {
@@ -115,7 +115,7 @@
     {
       mode = [ "n" ];
       key = "<leader>hd";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         require("gitsigns").diffthis
       '';
       options = {
@@ -125,7 +125,7 @@
     {
       mode = [ "n" ];
       key = "<leader>hD";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         function()
           require("gitsigns").diffthis("~")
         end
@@ -137,7 +137,7 @@
     {
       mode = [ "n" ];
       key = "<leader>td";
-      action = helpers.mkRaw ''
+      action = lib.nixvim.mkRaw ''
         require("gitsigns").toggle_deleted
       '';
       options = {

@@ -2,7 +2,6 @@
   pkgs,
   lib,
   pkgs-unstable,
-  helpers,
   ...
 }: {
   extraPlugins = with pkgs.vimPlugins; [
@@ -67,7 +66,7 @@
         settings = {
           formatterMode = "typstyle";
           semanticTokens = "disable";
-          rootPath = helpers.mkRaw ''
+          rootPath = lib.nixvim.mkRaw ''
             vim.fn.getcwd()
           '';
         };

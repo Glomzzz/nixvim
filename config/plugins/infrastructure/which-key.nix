@@ -1,4 +1,4 @@
-{helpers,pkgs-unstable, ...}: {
+{lib,pkgs-unstable, ...}: {
   extraPlugins = with pkgs-unstable.vimPlugins; [
     which-key-nvim
   ];

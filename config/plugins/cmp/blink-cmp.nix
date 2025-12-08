@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable,helpers, ... }:
+{ pkgs-unstable, ... }:
 {
   extraPlugins = with pkgs-unstable.vimPlugins; [
     blink-cmp
