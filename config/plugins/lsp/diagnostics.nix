@@ -1,4 +1,4 @@
-{ pkgs,lib, pkgs-unstable, pkg-wgsl-analyzer, ... }:
+{ pkgs,lib, ... }:
 
 {
   extraPlugins = with pkgs.vimPlugins;[

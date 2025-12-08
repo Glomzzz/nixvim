@@ -2,12 +2,10 @@
   pkgs,
   lib,
   pkgs-unstable,
-  pkg-wgsl-analyzer,
   helpers,
   ...
 }: {
   extraPlugins = with pkgs.vimPlugins; [
-    pkg-wgsl-analyzer
     neoconf-nvim
     neodev-nvim
   ];
@@ -76,6 +74,7 @@
       };
       kotlin_language_server.enable = true;
       scheme_langserver.enable = true;
+      wgsl_analyzer.enable = true;
     };
   };
 

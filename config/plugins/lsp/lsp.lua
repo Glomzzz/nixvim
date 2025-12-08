@@ -7,10 +7,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 
 local lspconfig = vim.lsp.config
 
-lspconfig.wgsl_analyzer.setup({
-  cmd = { "${pkg-wgsl-analyzer}/bin/wgsl_analyzer" }
-})
-
 
 vim.lsp.inlay_hint.enable()
 
