@@ -75,6 +75,7 @@
         };
       };
       kotlin_language_server.enable = true;
+      scheme_langserver.enable = true;
     };
   };
 
