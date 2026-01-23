@@ -3,6 +3,7 @@
     ./neoformat.nix
     ./neogen.nix
     ./trouble.nix
+    ./opencode.nix
   ];
 
   plugins = {

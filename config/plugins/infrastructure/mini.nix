@@ -3,8 +3,9 @@
 {
   plugins.mini = {
     enable = true;
-    modules.icons = {
-
+    modules = {
+      comment = {};
+      icons = {};
     };
     mockDevIcons = true;
   };
