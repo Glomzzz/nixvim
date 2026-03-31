@@ -67,8 +67,8 @@
           formatterMode = "typstyle";
           semanticTokens = "disable";
           rootPath = lib.nixvim.mkRaw ''
-            vim.fn.getcwd()
-          '';
+            vim.fs.joinpath(vim.fn.getcwd(), 'root')        
+            '';
         };
       };
       kotlin_language_server.enable = true;
